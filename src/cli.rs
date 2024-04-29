@@ -7,17 +7,10 @@ pub struct Cli {
 }
 
 impl Cli {
-    // TODO: Remove unwrap
-    pub fn get_paths(&self) -> Vec<&str> {
+    pub fn get_paths(&self) -> Vec<String> {
         match &self.files {
-            Some(files) => {
-                let mut paths: Vec<&str> = vec![];
-                for path in files {
-                    paths.push(path);
-                }
-                paths
-            }
-            None => vec!["./"],
+            Some(paths) => paths.to_owned(),
+            None => vec!["./".to_string()],
         }
     }
 }
