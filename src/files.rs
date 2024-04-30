@@ -43,7 +43,7 @@ impl Files {
             let file_name_string = file_name.to_str().unwrap();
 
             if entry.metadata().unwrap().is_dir() {
-                println!("{}", style(file_name_string).blue());
+                println!("{}", style(file_name_string).blue().bold());
             } else {
                 println!("{}", file_name_string);
             }
